@@ -1,0 +1,71 @@
+<CoordinateSystem> { Z-up } 
+<Material> Material {
+  <Scalar> diffr { 0.640000 }
+  <Scalar> diffg { 0.640000 }
+  <Scalar> diffb { 0.640000 }
+  <Scalar> specr { 0.500000 }
+  <Scalar> specg { 0.500000 }
+  <Scalar> specb { 0.500000 }
+  <Scalar> shininess { 12.5 }
+  <Scalar> emitr { 0.000000 }
+  <Scalar> emitg { 0.000000 }
+  <Scalar> emitb { 0.000000 }
+}
+
+<Texture> Texture {
+  "./tex/door_texture.png"
+  <Scalar> envtype { MODULATE }
+  <Scalar> minfilter { LINEAR_MIPMAP_LINEAR }
+  <Scalar> magfilter { LINEAR_MIPMAP_LINEAR }
+  <Scalar> wrap { REPEAT }
+}
+
+  <Group> Plane {
+    <Transform> {
+      <Matrix4> {
+        0.302754 0.000000 -0.000000 0.000000 
+        0.000000 -0.000554 0.493856 0.000000 
+        0.000000 -0.493856 -0.000554 0.000000 
+        0.000000 0.000000 0.494156 1.000000 
+      }
+    }
+    
+    <VertexPool> Plane {
+    
+      <Vertex> 0 {
+        -0.49292242527008057 0.0009090470848605037 0.0017163580050691962
+        
+        <UV>  {
+          0.107861 0.110260
+        }
+      }
+      <Vertex> 1 {
+        0.49988988041877747 0.0009090471430681646 0.0017163580050691962
+        
+        <UV>  {
+          0.889740 0.107861
+        }
+      }
+      <Vertex> 2 {
+        0.49988988041877747 -0.0009090480743907392 1.6212013959884644
+        
+        <UV>  {
+          0.892139 0.889740
+        }
+      }
+      <Vertex> 3 {
+        -0.49292242527008057 -0.0009090481325984001 1.6212013959884644
+        
+        <UV>  {
+          0.110260 0.892139
+        }
+      }}
+    
+    
+    <Polygon> {
+      <TRef> { Texture }
+      <MRef> { Material }
+      <Normal> {0.000000 -0.999999 -0.001123}
+      <VertexRef> { 0 1 2 3 <Ref> { Plane }}
+    }
+  }
